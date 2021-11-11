@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/compare/1.0.1...1.0.2) (2021-11-11)
+
+
+### Bug Fixes
+
+* Fix permissions for creating file ([05a5e9f](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/commit/05a5e9fade4152724ab09496c3e48217c6c9f8eb))
+
 ## [1.0.1](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/compare/1.0.0...1.0.1) (2021-11-11)
 
 
