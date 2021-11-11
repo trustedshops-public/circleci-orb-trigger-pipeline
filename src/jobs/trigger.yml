@@ -33,6 +33,7 @@ parameters:
     default: circleci-trigger-pipeline
 
 steps:
+  - create-trigger-pipeline-script
   - trigger:
       branch: <<parameters.branch>>
       build-parameters: <<parameters.build-parameters>>
