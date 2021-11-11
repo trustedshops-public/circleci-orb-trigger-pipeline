@@ -1,0 +1,17 @@
+description: >
+  Create python script for triggering CircleCI pipelines
+
+parameters:
+  destination:
+    default: /usr/local/bin/circleci-trigger-pipeline
+    description: Path to use for the script
+    type: string
+
+steps:
+  - run:
+      name: Populate script name as env variable
+      command: |
+        echo 'export CIRCLECI_TRIGGER_PIPELINE_SCRIPT_PATH="<<parameters.destination>>"' >> $BASH_ENV
+  - run:
+      name: Create python script
+      command: <<include(scripts/create-trigger-pipeline-script.sh)>>

@@ -1,0 +1,43 @@
+description: >
+  Trigger CircleCI pipeline
+
+parameters:
+  branch:
+    type: string
+    description: Branch to trigger pipeline for
+    default: main
+  build-parameters:
+    type: string
+    description: Build parameters in format key=value, separated by spaces
+    default: ""
+  vcs:
+    type: string
+    description: VCS Provider that is used in the target project
+    default: "github"
+  circleci-url:
+    type: string
+    description: CircleCI url to use, without trailing slash
+    default: "https://circleci.com"
+  circleci-token:
+    type: env_var_name
+    description: Name of the environment variable containing the CircleCI token to use for api calls
+    default: CIRCLE_TOKEN
+  slug:
+    type: string
+    description: Slug for org/username and project separated by slash
+  script:
+    type: string
+    description: Script path to use for execution
+    default: circleci-trigger-pipeline
+
+steps:
+  - run:
+      name: Trigger pipeline for <<parameters.slug>> on branch <<parameters.branch>>
+      command: |
+        <<parameters.script>> \
+          --branch <<parameters.branch>> \
+          --build-parameters <<parameters.build-parameters>> \
+          --vcs <<parameters.vcs>> \
+          --circleci-url <<parameters.circleci-url>> \
+          --circleci-token $<<parameters.circleci-token>> \
+          --slug <<parameters.slug>>
