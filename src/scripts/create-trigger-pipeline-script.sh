@@ -1,5 +1,5 @@
 echo "Create file in ${CIRCLECI_TRIGGER_PIPELINE_SCRIPT_PATH} ..."
-cat <<TEXT > "${CIRCLECI_TRIGGER_PIPELINE_SCRIPT_PATH}"
+cat <<TEXT > /tmp/trigger-pipeline.tmp
 #!/usr/bin/env python3
 import time
 import urllib.request
@@ -85,5 +85,7 @@ if __name__ == "__main__":
     print_pair("ID", parsed_response['id'])
 TEXT
 
+sudo mv /tmp/trigger-pipeline.tmp "${CIRCLECI_TRIGGER_PIPELINE_SCRIPT_PATH}"
+
 echo "Making file ${CIRCLECI_TRIGGER_PIPELINE_SCRIPT_PATH} executable ..."
-chmod +x "${CIRCLECI_TRIGGER_PIPELINE_SCRIPT_PATH}"
+sudo chmod +x "${CIRCLECI_TRIGGER_PIPELINE_SCRIPT_PATH}"
