@@ -36,7 +36,7 @@ steps:
       command: |
         <<parameters.script>> \
           --branch <<parameters.branch>> \
-          --build-parameters <<parameters.build-parameters>> \
+         `if [ ! -z "<<parameters.build-parameters>>" ]; then echo "--build-parameters <<parameters.build-parameters>>"; fi` \
           --vcs <<parameters.vcs>> \
           --circleci-url <<parameters.circleci-url>> \
           --circleci-token $<<parameters.circleci-token>> \
