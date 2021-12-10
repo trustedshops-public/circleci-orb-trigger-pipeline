@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/compare/1.0.2...1.0.3) (2021-12-10)
+
+
+### Bug Fixes
+
+* **#1:** Fix script call with empty build-parameters in trigger command ([7f656c7](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/commit/7f656c77ba5032c0847b2dbaef45ec90c79fba5c)), closes [#1](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/issues/1)
+
 ## [1.0.2](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/compare/1.0.1...1.0.2) (2021-11-11)
 
 
