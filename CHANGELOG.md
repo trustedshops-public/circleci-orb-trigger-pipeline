@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/compare/1.0.3...1.1.0) (2022-02-05)
+
+
+### Features
+
+* Inline trigger pipeline script path into command ([#2](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/issues/2)) ([552527b](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/commit/552527bc0493fe86a0629208021a63ffdf6a71f8))
+
 ## [1.0.3](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/compare/1.0.2...1.0.3) (2021-12-10)
 
 
