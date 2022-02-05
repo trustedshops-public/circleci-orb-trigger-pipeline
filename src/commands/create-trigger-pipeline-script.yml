@@ -9,9 +9,7 @@ parameters:
 
 steps:
   - run:
-      name: Populate script name as env variable
-      command: |
-        echo 'export CIRCLECI_TRIGGER_PIPELINE_SCRIPT_PATH="<<parameters.destination>>"' >> $BASH_ENV
-  - run:
       name: Create python script
+      environment:
+        CIRCLECI_TRIGGER_PIPELINE_SCRIPT_PATH: <<parameters.destination>>
       command: <<include(scripts/create-trigger-pipeline-script.sh)>>
