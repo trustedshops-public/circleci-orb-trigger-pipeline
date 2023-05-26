@@ -6,7 +6,7 @@ parameters:
     type: string
     description: Branch to trigger pipeline for
     default: main
-  build-parameters:
+  build_parameters:
     type: string
     description: Build parameters in format key=value, separated by spaces
     default: ""
@@ -14,11 +14,11 @@ parameters:
     type: string
     description: VCS Provider that is used in the target project
     default: "github"
-  circleci-url:
+  circleci_url:
     type: string
     description: CircleCI url to use, without trailing slash
     default: "https://circleci.com"
-  circleci-token:
+  circleci_token:
     type: env_var_name
     description: Name of the environment variable containing the CircleCI token to use for api calls
     default: CIRCLE_TOKEN
@@ -36,8 +36,8 @@ steps:
       command: |
         <<parameters.script>> \
           --branch <<parameters.branch>> \
-         `if [ ! -z "<<parameters.build-parameters>>" ]; then echo "--build-parameters <<parameters.build-parameters>>"; fi` \
+          `if [ ! -z "<<parameters.build_parameters>>" ]; then echo "--build-parameters <<parameters.build_parameters>>"; fi` \
           --vcs <<parameters.vcs>> \
-          --circleci-url <<parameters.circleci-url>> \
-          --circleci-token $<<parameters.circleci-token>> \
+          --circleci-url <<parameters.circleci_url>> \
+          --circleci-token $<<parameters.circleci_token>> \
           --slug <<parameters.slug>>
