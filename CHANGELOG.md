@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/compare/1.1.0...2.0.0) (2023-05-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* MIgrate to orb tools v12 (#10)
+
+### Code Refactoring
+
+* MIgrate to orb tools v12 ([#10](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/issues/10)) ([7782b55](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/commit/7782b55f5640e4c7b9c058b0a2154cc611f2e4bf))
+
 # [1.1.0](https://github.com/trustedshops-public/circleci-orb-trigger-pipeline/compare/1.0.3...1.1.0) (2022-02-05)
 
 
