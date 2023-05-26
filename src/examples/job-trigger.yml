@@ -10,8 +10,8 @@ usage:
         - trigger-pipeline/trigger:
             name: trigger-dev-deployment
             branch: master
-            build-parameters: service=booking-api stage=dev triggering_workflow=${CIRCLE_WORKFLOW_ID}
-            circleci-token: CIRCLE_TOKEN_ANSIBLE_API_DEPLOYMENT
+            build_parameters: service=booking-api stage=dev triggering_workflow=${CIRCLE_WORKFLOW_ID}
+            circleci_token: CIRCLE_TOKEN_ANSIBLE_API_DEPLOYMENT
             slug: ${CIRCLE_PROJECT_USERNAME}/ansible-api-deployment
             script: <<parameters.script>>
             context:
