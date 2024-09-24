@@ -33,10 +33,10 @@ parameters:
 steps:
   - run:
       name: Trigger pipeline for <<parameters.slug>> on branch <<parameters.branch>>
-      command: |
+      command: |-
         <<parameters.script>> \
           --branch <<parameters.branch>> \
-          `if [ ! -z "<<parameters.build_parameters>>" ]; then echo "--build-parameters <<parameters.build_parameters>>"; fi` \
+          $(if [ ! -z "<<parameters.build-parameters>>" ]; then echo "--build-parameters $(echo "<<parameters.build-parameters>>" | sed 's/ / --build-parameters /g')"; fi) \
           --vcs <<parameters.vcs>> \
           --circleci-url <<parameters.circleci_url>> \
           --circleci-token $<<parameters.circleci_token>> \
